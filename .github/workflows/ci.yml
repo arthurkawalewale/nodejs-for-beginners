@@ -14,7 +14,7 @@ jobs:
             run: echo "::set-output name=JWT_SECRET::$(openssl rand -base64 30)"
             shell: bash
           - name: Set up Docker Compose
-            uses: docker/compose-action@v1
+            uses: docker/setup-compose-action@v1
           - name: Prepare environment
             run: npm run infra:start
           - name: Run tests
