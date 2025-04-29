@@ -13,6 +13,8 @@ jobs:
             id: generate-secret
             run: echo "::set-output name=JWT_SECRET::$(openssl rand -base64 30)"
             shell: bash
+          - name: Set up Docker
+            uses: docker/setup-docker-action@v4
           - name: Set up Docker Compose
             uses: docker/setup-compose-action@v1
           - name: Prepare environment
